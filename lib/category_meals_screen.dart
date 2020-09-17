@@ -13,11 +13,10 @@ class CategoryMealsScreen extends StatelessWidget {
     final routeArgs =
         ModalRoute.of(context).settings.arguments as Map<String, String>;
     final categoryTitle = routeArgs['title'];
-    final categoryId = routeArgs['Id'];
+    final categoryId = routeArgs['id'];
     final categoryMeals = DUMMY_MEALS.where((meal) {
       return meal.categories.contains(categoryId);
     }).toList();
-    print(categoryMeals.length);
     return Scaffold(
       appBar: AppBar(
         title: Text(categoryTitle),
